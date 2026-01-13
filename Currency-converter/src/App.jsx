@@ -3,8 +3,8 @@ import InputBox from "./components/inputBox";
 import useCustomHook from "./hooks/useCustomHook";
 
 export const App = () => {
-  const [amount, setAmount] = useState(0);
-  const [convertedAmount, setConvertedAmount] = useState(0);
+  const [amount, setAmount] = useState("");
+  const [convertedAmount, setConvertedAmount] = useState("");
   const [fromCurrency, setFromCurrency] = useState("usd");
   const [toCurrency, setToCurrency] = useState("inr");
 
@@ -45,7 +45,7 @@ export const App = () => {
                   amount={amount}
                   currencyOptions={options}
                   onAmountChange={(amount) => setAmount(amount)}
-                  onCurrencyChange={(currency) => setAmount(amount)}
+                  onCurrencyChange={(currency) => setFromCurrency(currency)}
                   selectCurrency={fromCurrency}
                 />
               </div>
@@ -64,7 +64,7 @@ export const App = () => {
                   amount={convertedAmount}
                   currencyOptions={options}
                   onAmountChange={(amount) => setAmount(amount)}
-                  onCurrencyChange={(currency) => setAmount(amount)}
+                  onCurrencyChange={(currency) => setToCurrency(currency)}
                   selectCurrency={toCurrency}
                 />
               </div>
